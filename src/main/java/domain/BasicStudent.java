@@ -25,7 +25,7 @@ public class BasicStudent implements Jsonable {
         // ToDo
         JsonString nameString = new JsonString(name);
         JsonString surnameString = new JsonString(surname);
-        JsonNumber yearNumber= new JsonNumber(year);
+        JsonNumber yearNumber = new JsonNumber(year);
         JsonPair namePair = new JsonPair("name", nameString);
         JsonPair surnamePair = new JsonPair("surname", surnameString);
         JsonPair yearPair = new JsonPair("year", yearNumber);

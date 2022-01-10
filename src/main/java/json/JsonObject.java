@@ -20,8 +20,8 @@ public class JsonObject extends Json {
         // ToDo
         String jsonString = "{";
         for (String key : jsonObject.keySet()) {
-            if (!jsonString.equals("{")){
-                jsonString+=',';
+            if (!jsonString.equals("{")) {
+                jsonString += ',';
             }
             String keyString = new JsonString(key).toJson();
             if (isPresent(key)) {
@@ -41,7 +41,7 @@ public class JsonObject extends Json {
         // ToDo
         return jsonObject.get(name);
     }
-    public boolean isPresent(String name){
+    public boolean isPresent(String name) {
         if (find(name) == null) {
             return false;
         }
@@ -57,22 +57,7 @@ public class JsonObject extends Json {
                 jsonObjectProjection.add(jsonPair);
             }
         }
-//        for (String key : jsonObject.keySet()) {
-//            for (String name: names){
-//                if (key.equals(name)){
-//                    JsonPair jsonPair = new JsonPair(name, find(name));
-//                    jsonObjectProjection.add(jsonPair);
-//                }
-//            }
-//        }
-        for (String key : jsonObject.keySet()) {
-            for (String name: names){
-                if (key.equals(name)){
-                    JsonPair jsonPair = new JsonPair(name, find(name));
-                    jsonObjectProjection.add(jsonPair);
-                }
-            }
-        }
+//
         return jsonObjectProjection;
     }
 }

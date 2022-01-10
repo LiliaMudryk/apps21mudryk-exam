@@ -47,11 +47,11 @@ public class Student extends BasicStudent {
         JsonObject jsonObject = super.toJsonObject();
         JsonObject[] exams = new JsonObject[examsResults.length];
         int index = 0;
-        for (Tuple<String, Integer> examData: examsResults){
+        for (Tuple<String, Integer> examData: examsResults) {
             Exam exam = new Exam(examData);
             JsonObject jsonObjectExam = exam.createJsonObject();
             exams[index] = jsonObjectExam;
-            index+=1;
+            index += 1;
         }
         jsonObject.add(new JsonPair("exams", new JsonArray(exams)));
         return jsonObject;
